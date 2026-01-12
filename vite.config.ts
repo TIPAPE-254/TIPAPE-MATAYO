@@ -10,6 +10,22 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
+      build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        sourcemap: false,
+        minify: 'terser',
+        rollupOptions: {
+          output: {
+            entryFileNames: 'js/[name]-[hash].js',
+            chunkFileNames: 'js/[name]-[hash].js',
+            assetFileNames: ({ name }) => {
+              if (name.endsWith('.css')) return 'css/[name]-[hash][extname]';
+              return 'assets/[name]-[hash][extname]';
+            }
+          }
+        }
+      },
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),

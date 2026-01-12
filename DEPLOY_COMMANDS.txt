@@ -1,0 +1,200 @@
+═══════════════════════════════════════════════════════════════════════
+  TIPAPE-MATAYO GITHUB PAGES DEPLOYMENT - EXACT COMMANDS TO RUN
+═══════════════════════════════════════════════════════════════════════
+
+PROJECT STATUS: ✅ FULLY CONFIGURED FOR GITHUB PAGES
+
+Repository: TIPAPE-254/TIPAPE-MATAYO
+GitHub Pages URL: https://TIPAPE-254.github.io/TIPAPE-MATAYO/
+
+───────────────────────────────────────────────────────────────────────
+1. DEVELOPMENT (Local Testing)
+───────────────────────────────────────────────────────────────────────
+
+Start development server:
+  npm run dev
+
+Then open in browser:
+  http://localhost:3000
+
+───────────────────────────────────────────────────────────────────────
+2. BUILD FOR PRODUCTION
+───────────────────────────────────────────────────────────────────────
+
+Build the project:
+  npm run build
+
+This creates optimized files in: ./dist/
+
+Verify build succeeded:
+  ls -la dist/
+  # Should show: index.html and js/ folder
+
+Preview the production build locally:
+  npm run preview
+
+Then open:
+  http://localhost:4173/TIPAPE-MATAYO/
+
+───────────────────────────────────────────────────────────────────────
+3. DEPLOY TO GITHUB PAGES
+───────────────────────────────────────────────────────────────────────
+
+OPTION A: AUTOMATIC (Recommended) 🚀
+────────────────────────────────────
+
+Just push to main branch:
+  git add .
+  git commit -m "Deploy to GitHub Pages"
+  git push origin main
+
+GitHub Actions will automatically:
+  1. Install dependencies
+  2. Build your project
+  3. Deploy to GitHub Pages
+
+Check deployment status:
+  1. Go to GitHub repo
+  2. Click "Actions" tab
+  3. Watch the deploy workflow run
+  4. Once complete, visit:
+     https://TIPAPE-254.github.io/TIPAPE-MATAYO/
+
+
+OPTION B: MANUAL DEPLOYMENT 🔧
+──────────────────────────────
+
+Deploy locally with gh-pages:
+  npm run deploy
+
+This will:
+  1. Build the project
+  2. Push dist/ to gh-pages branch
+  3. GitHub Pages serves it automatically
+
+Then visit:
+  https://TIPAPE-254.github.io/TIPAPE-MATAYO/
+
+
+OPTION C: USING DEPLOY SCRIPT 📝
+─────────────────────────────────
+
+Run interactive deployment:
+  ./deploy.sh
+
+───────────────────────────────────────────────────────────────────────
+4. TROUBLESHOOTING COMMANDS
+───────────────────────────────────────────────────────────────────────
+
+Clear build cache and rebuild:
+  rm -rf dist node_modules/.vite
+  npm run build
+
+Check build output size:
+  du -sh dist/
+
+List all files in build:
+  find dist/ -type f
+
+Check if GEMINI_API_KEY is set:
+  echo $GEMINI_API_KEY
+
+Set API key for local build:
+  export GEMINI_API_KEY="your-key-here"
+  npm run build
+
+View GitHub Actions logs (in terminal):
+  gh run list -R TIPAPE-254/TIPAPE-MATAYO
+  gh run view <RUN_ID> -R TIPAPE-254/TIPAPE-MATAYO
+
+───────────────────────────────────────────────────────────────────────
+5. VERIFY DEPLOYMENT
+───────────────────────────────────────────────────────────────────────
+
+After deployment, verify everything works:
+
+1. Visit your site:
+   https://TIPAPE-254.github.io/TIPAPE-MATAYO/
+
+2. Check for errors (DevTools):
+   F12 → Console → Look for red errors
+   F12 → Network → Check for 404s
+
+3. Verify no blank page:
+   Page should show your portfolio with styling
+
+4. Test links:
+   - Click navigation links
+   - Test "Hire Me" button
+   - Check contact form
+
+5. Check build output:
+   Go to GitHub → Settings → Pages
+   Should show "Deployed" status
+
+───────────────────────────────────────────────────────────────────────
+6. ENVIRONMENT VARIABLES
+───────────────────────────────────────────────────────────────────────
+
+For GitHub Actions to work, set your API key:
+
+1. Go to GitHub repository
+2. Settings → Secrets and variables → Actions
+3. Click "New repository secret"
+4. Name: GEMINI_API_KEY
+5. Value: [paste your actual API key]
+6. Click "Add secret"
+
+The workflow will automatically use it.
+
+───────────────────────────────────────────────────────────────────────
+7. IMPORTANT FILES
+───────────────────────────────────────────────────────────────────────
+
+✅ vite.config.ts
+   - Base path: /TIPAPE-MATAYO/
+   - Build output: dist/
+   - Minification: enabled
+
+✅ package.json
+   - Scripts: dev, build, preview, deploy
+   - Dependencies: includes gh-pages
+
+✅ .github/workflows/deploy.yml
+   - Auto-deploys on push to main
+   - Sets GEMINI_API_KEY from secrets
+   - Uploads dist/ to GitHub Pages
+
+✅ index.html
+   - Entry point for your app
+   - Vite will add proper paths automatically
+
+───────────────────────────────────────────────────────────────────────
+8. QUICK REFERENCE
+───────────────────────────────────────────────────────────────────────
+
+Local Development:
+  npm run dev               # Start dev server
+
+Build:
+  npm run build             # Build for production
+  npm run preview           # Preview build locally
+
+Deploy:
+  npm run deploy            # Deploy to GitHub Pages
+  git push origin main      # Push to trigger auto-deploy
+
+Check Status:
+  npm run build             # Verify build works
+  ls dist/index.html        # Check output exists
+
+═══════════════════════════════════════════════════════════════════════
+YOUR SITE IS READY TO DEPLOY! 🚀
+
+Next Steps:
+1. Commit your changes: git commit -m "Configure GitHub Pages"
+2. Push to main: git push origin main
+3. Check Actions tab for deployment progress
+4. Visit: https://TIPAPE-254.github.io/TIPAPE-MATAYO/
+
+═══════════════════════════════════════════════════════════════════════
