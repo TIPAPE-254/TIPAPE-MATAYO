@@ -14,7 +14,7 @@ I hold a Full-Stack Web Development degree from Emobilis Institute of Technology
       description: "Collaborated with global young leaders on sustainable development and climate change initiatives."
     },
     {
-      title: "Founder, Mental Health Association",
+      title: "Founder, UNITY WITHIN",
       description: "Founded a youth-led association for mental health and self-acceptance, utilizing technology for awareness."
     }
   ]

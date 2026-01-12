@@ -47,11 +47,11 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
-        <div className="mt-12 flex justify-center gap-6 text-gray-400">
-           <a href="#" className="hover:text-primary transition-colors hover:scale-110"><Github className="w-6 h-6" /></a>
-           <a href="#" className="hover:text-primary transition-colors hover:scale-110"><Linkedin className="w-6 h-6" /></a>
-           <a href="mailto:contact@tipape.dev" className="hover:text-primary transition-colors hover:scale-110"><Mail className="w-6 h-6" /></a>
-        </div>
+          <div className="mt-12 flex justify-center gap-6 text-gray-400">
+            <a href="https://github.com/TIPAPE-254" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110"><Github className="w-6 h-6" /></a>
+            <a href="https://www.linkedin.com/in/tipape-matayo-b66266385/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110"><Linkedin className="w-6 h-6" /></a>
+            <a href="mailto:tipapematayo@gmail.com" className="hover:text-primary transition-colors hover:scale-110"><Mail className="w-6 h-6" /></a>
+          </div>
       </div>
     </section>
   );

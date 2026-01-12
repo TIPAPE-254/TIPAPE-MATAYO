@@ -38,7 +38,12 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/10 transition-colors">
+          <a
+            href="https://wa.me/254715765561?text=Hello%20Tipape%2C%20I%20saw%20your%20site%20and%20skills%20and%20I%20wanna%20HIRE%20you%20please%20reach%20out"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/10 transition-colors"
+          >
             Hire Me
           </a>
         </div>
@@ -53,18 +58,27 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-            <div className="absolute top-full left-0 w-full bg-darker border-b border-gray-800 p-6 flex flex-col gap-4 md:hidden animate-fade-in shadow-2xl">
-                {navLinks.map((link) => (
-                    <a 
-                        key={link.name} 
-                        href={link.href} 
-                        className="text-gray-300 hover:text-white py-2 block border-b border-gray-800 last:border-0"
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                    {link.name}
-                    </a>
-                ))}
-            </div>
+          <div className="absolute top-full left-0 w-full bg-darker border-b border-gray-800 p-6 flex flex-col gap-4 md:hidden animate-fade-in shadow-2xl">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-gray-300 hover:text-white py-2 block border-b border-gray-800"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+              {link.name}
+              </a>
+            ))}
+            <a
+              href="https://wa.me/254715765561?text=Hello%20Tipape%2C%20I%20saw%20your%20site%20and%20skills%20and%20I%20wanna%20HIRE%20you%20please%20reach%20out"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/10 transition-colors text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Hire Me
+            </a>
+          </div>
         )}
       </div>
     </nav>
